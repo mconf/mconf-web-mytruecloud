@@ -1,0 +1,15 @@
+#footer-wrapper
+  .shadow-top
+  #footer
+    .sponsored-by
+      .mconftec
+        = link_to "http://mconf.com" do
+          = image_tag "mytruecloud/MconfTec-ico-64x64.png", size: "32x32", title: "Mconf Tecnologia"
+      .mconf
+        = link_to "http://mconf.org" do
+          = image_tag "mytruecloud/Mconf_IconBalloon.png", size: "28x28", title: "Mconf"
+    -# %div= t('.address')
+    -# %div
+    -#   %b= t('.more').html_safe
+    %div.copyright
+      %span= t('.copyright', year: Time.now.year)

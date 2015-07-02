@@ -1,0 +1,12 @@
+---
+en:
+  frontpage:
+    show:
+      login:
+        admin: "Administrative login"
+        certificate: "Sign in using your certificate"
+  layouts:
+    footer_mytruecloud:
+      address: "Safeweb Segurança da Informação Ltda - Av. Princesa Isabel, 828 - Porto Alegre / RS - Fone: (51) 3018.0300"
+      copyright: "Copyright © %{year} My True Cloud. All rights reserved."
+      more: "Visite <a href=\"http://safeweb.com.br\">safeweb.com.br</a>"

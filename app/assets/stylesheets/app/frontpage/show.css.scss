@@ -130,3 +130,38 @@ $bg-normal: darken($green-logo, 3);
     color: $font-h-color;
   }
 }
+
+//
+// Custom frontpage for mytruecloud
+//
+body.frontpage.show {
+  background: $mtc-default-bg;
+
+  #main-logo {
+    margin: 25px auto;
+    width: 485px;
+    height: 100px;
+    img {
+      width: 485px;
+      height: 100px;
+    }
+  }
+
+  #navbar-wrapper {
+    background: $mtc-default-bg;
+    border: 0;
+    @include box-shadow(none);
+
+    #navbar {
+      padding: 40px 0 30px 0;
+    }
+  }
+
+  // Make it just a bar without anything in it
+  #page-header-wrapper {
+    height: 40px;
+  }
+  #page-header {
+    display: none;
+  }
+}
