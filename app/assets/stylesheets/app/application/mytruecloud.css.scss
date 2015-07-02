@@ -242,7 +242,7 @@ body.my.home, body.my.activity, body.my.recordings {
     }
   }
 
-  #user-info a {
+  #user-info .user-links a {
     @include link-colors(#fff, #ddd, #ddd, #fff);
   }
 
