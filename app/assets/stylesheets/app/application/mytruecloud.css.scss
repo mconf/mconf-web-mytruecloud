@@ -252,12 +252,39 @@ body.my.home, body.my.activity, body.my.recordings {
   }
 }
 
-/* /\* Overriding bootstrap buttons *\/ */
-/* .btn.btn-info, .btn.btn-primary { */
-/*   background: #404c57 url(image_path("btn-info.png")) repeat-x; */
-/*   border: 1px solid #55626e; */
-/*   text-shadow: 0 1px 1px #55626e; */
-/*   color: #fff; */
+/* Overriding bootstrap buttons */
+.btn, a.btn, .btn.btn-info, .btn.btn-primary {
+  border: 1px solid #4C4C4C;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+  transition: none;
 
-/*   a { @include link-colors(#fff, #eee, #eee, #fff); } */
-/* } */
+  @include background(linear-gradient(top, $mtc-bg-light, $mtc-bg-dark));
+
+  a { @include link-colors(#fff, #eee, #eee, #fff); }
+
+  .icon-awesome { color: #fff; }
+  .caret { border-top-color: #fff; }
+
+  &:hover, &:active, &:focus, &.active {
+    background: darken($mtc-bg-light, 15);
+    transition: none;
+    color: #fff;
+  }
+}
+.btn-group.open .btn.dropdown-toggle {
+  border: 1px solid #4C4C4C;
+  background: darken($mtc-bg-light, 15);
+  transition: none;
+}
+.btn.btn-danger {
+  border: 1px solid $mtc-bg-orange-dark;
+  @include background(linear-gradient(top, $mtc-bg-orange-light, $mtc-bg-orange-dark));
+
+  &:hover, &:active, &:focus {
+    background: darken($mtc-bg-orange-light, 10);
+    transition: none;
+  }
+}
