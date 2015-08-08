@@ -236,3 +236,39 @@ $mail-font-size: $font-normal;
   font-weight: normal;
   @include font-size($font-small);
 }
+
+
+// MyTrueCloud
+$mtc-blue-bg: #0D5292;
+$mtc-blue-bg-light: #0D9DDC;
+$mtc-blue-text: #1563A1;
+$mtc-orange: #DD590B;
+$mtc-orange-2: #ff6600;
+$mtc-default-bg: image-url('mytruecloud/subtle_dots.png') repeat left top;
+$mtc-menu-item-selected: #eee;
+$mtc-bg-light: #868686;
+$mtc-bg-dark: #575757;
+$mtc-bg-orange-light: #f9a34c;
+$mtc-bg-orange-dark: #f47727;
+//
+$second-color: $mtc-blue-bg-light;
+$font-color: #333333;
+$navbar-bg-color-dark: $mtc-blue-bg;
+$navbar-bg-color-light: $mtc-blue-bg-light;
+$font-family: HelveticaNeue-Regular, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$link-color: $mtc-orange;
+$link-color-hover: $mtc-orange-2;
+$link-color-active: $mtc-orange;
+$navbar-font-color: #333; // #ddd
+$navbar-font-color-hover: #000; // white
+$navbar-height: 80px;
+$page-menu-font-color: #eee;
+$page-menu-font-color-selected: $mtc-orange;
+$page-header-font-color: #eee;
+$page-title-color: white;
+$font-h-color: #5a5a5a;
+$page-header-link-color: lighten($link-color, 45);
+$page-header-link-color-hover: lighten($link-color, 35);
+$footer-color: #ddd;
+$footer-bg-color: $navbar-bg-color-dark;
+$footer-height: 70px;

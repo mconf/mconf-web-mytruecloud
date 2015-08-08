@@ -30,11 +30,12 @@
             - if content_for?(:page_menu)
               #page-menu
                 = yield :page_menu
+          .shadow-top
       #content-wrapper
         = yield
       #footer-pusher
 
-    = render :partial => "layouts/footer_simple"
+    = render :partial => "layouts/footer_mytruecloud"
 
     = render :partial => "layouts/analytics"
     = render :partial => "layouts/notifications"

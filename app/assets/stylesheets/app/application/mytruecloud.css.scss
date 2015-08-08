@@ -1,0 +1,290 @@
+@import "compass/css3";
+@import "compass/typography/links";
+@import "definitions";
+
+
+body {
+  background: $mtc-default-bg;
+}
+
+// So that it uses the body's background image
+#site, #page-header-wrapper {
+  background: none;
+}
+
+// All links have underline when hovered
+a:hover {
+  text-decoration: underline;
+}
+
+// Navbar without bg
+#navbar-wrapper {
+  background: none;
+}
+
+// Darker page header and footer
+#page-header-wrapper, #footer-wrapper {
+  background: $navbar-bg-color-dark;
+  @include background(linear-gradient(circle, $navbar-bg-color-light, $navbar-bg-color-dark));
+  background: image-url('mytruecloud/bg-banner-blue.png') no-repeat scroll center center $navbar-bg-color-dark;
+  position: relative;
+
+  // Overlay with a fancy image in the header
+  .tt-overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    background: image-url('mytruecloud/banner-stars.png') center center no-repeat;
+  }
+  .shadow-top {
+    position: absolute;
+    top: 0;
+    height: 60%;
+    width: 100%;
+    z-index: 0;
+    background: image-url('mytruecloud/shadow-1.png') left top repeat-x;
+  }
+  .shadow-bottom {
+    position: absolute;
+    bottom: 0;
+    height: 30%;
+    width: 100%;
+    z-index: 0;
+    background: image-url('mytruecloud/shadow-bottom.png') center bottom repeat-x;
+  }
+}
+
+// More space in page headers
+#page-header {
+  padding: 35px 0 30px 0;
+  color: $page-header-font-color;
+  /* padding: 30px 0 20px 0; */
+
+  .current-page-title, .current-page-title .main-title {
+    @include text-shadow(none);
+  }
+
+  .current-page-title.space-page {
+    .resource-visibility, .user-is-member {
+      color: #ddd;
+
+      .icon-awesome {
+        color: #ddd;
+      }
+    }
+  }
+
+  .current-page-logo {
+    background: #eee;
+  }
+}
+body.my.home, body.my.activity, body.my.recordings {
+  #page-header {
+    padding: 30px 0 25px 0 !important;
+  }
+}
+#page-menu {
+  margin-bottom: -31px; // #page-header's bottom margin -2px
+}
+
+// Bigger font size in the navbar
+#navbar ul#navbar-left-links, #navbar ul#navbar-right-links {
+  @include font-size($font-medium);
+
+  .dropdown-menu {
+    @include font-size($font-normal);
+  }
+}
+ul#navbar-left-links, #navbar #navbar-right-links {
+  margin: 25px 20px;
+}
+
+#navbar #navbar-right-links .dropdown {
+  &.open {
+    background: $mtc-menu-item-selected;
+  }
+
+  .dropdown-menu {
+    top: $navbar-height - 48px; // 48 magic number for borders, margins, etc, makes it look good
+    border-top: 1px solid $mtc-menu-item-selected;
+  }
+}
+
+
+// Bigger top logo
+#main-logo {
+  margin: 7px;
+  width: 315px;
+  height: 65px;
+}
+
+// Adjust colors in page menus
+#page-menu {
+  > ul > li.selected {
+    background: $mtc-default-bg;
+    > a, > a.danger-text {
+      $normal: $page-menu-font-color-selected; //darken($page-menu-font-color, 40);
+      $light: lighten($page-menu-font-color-selected, 5); //darken($page-menu-font-color, 20);
+      @include link-colors($normal, $light, $light, $normal);
+    }
+  }
+
+  > ul > li > a.danger-text {
+    $normal: $page-menu-font-color;
+    $light: lighten($page-menu-font-color, 10);
+    @include link-colors($normal, $light, $light, $normal);
+    opacity: 1;
+  }
+
+  // Bottom border on selected items instead of light background with rounded borders
+  /* > ul { */
+  /*   border-bottom: 1px solid #ddd; */
+  /*   > li { */
+  /*     display: inline-block; */
+  /*     margin-left: 10px; */
+  /*     margin-bottom: -2px; */
+  /*     &.selected { */
+  /*       border: 0; */
+  /*       border-bottom: 3px solid $mtc-orange; */
+  /*       @include border-top-radius(0); */
+  /*       background: $transparent; */
+  /*   > a, > a.danger-text { */
+  /*     $normal: white; //$page-menu-font-color; //$page-menu-font-color-selected; //darken($page-menu-font-color, 40); */
+  /*     $light: lighten($page-menu-font-color, 10); //lighten($page-menu-font-color-selected, 5); //darken($page-menu-font-color, 20); */
+  /*     @include link-colors($normal, $light, $light, $normal); */
+  /*   } */
+  /*     } */
+  /*   } */
+  /* } */
+}
+
+// The footer is a lot cleaner
+/* #footer-wrapper { */
+/*   border: 0; */
+/* } */
+/* #footer { */
+/*   .copyright { */
+/*     margin-top: 5px; */
+/*   } */
+/* } */
+
+// Fancy footer in content-blocks is cleaner, without bg and a simple border
+#content-middle .content-block-footer.content-block-footer-fancy {
+  background: $mtc-default-bg;
+  border-top: 1px solid #ddd;
+}
+
+#footer {
+  padding: 15px 0;
+  color: $footer-color;
+
+  .copyright {
+    margin-top: 10px;
+    float: left;
+  }
+
+  .sponsored-by {
+    float: right;
+    clear: right;
+    @include mconf-clearfix;
+  }
+
+  .mconftec {
+    float: right;
+    margin: 0 5px;
+
+    img {
+      width: 32px;
+      height: 32px;
+      @include transition(opacity .5s, background .5s);
+      opacity: 0.7;
+      padding: 3px;
+      @include border-radius(4px);
+    }
+
+    img:hover {
+      opacity: 1;
+      background: darken($footer-bg-color, 5);
+    }
+  }
+
+  .mconf {
+    float: right;
+    margin: 0 5px;
+
+    img {
+      width: 28px;
+      height: 28px;
+      @include transition(opacity .5s, background .5s);
+      opacity: 0.7;
+      padding: 6px;
+      @include border-radius(4px);
+    }
+
+    img:hover {
+      opacity: 1;
+      background: darken($footer-bg-color, 5);
+    }
+  }
+
+}
+
+
+/* Overriding my/* */
+body.my.home, body.my.activity, body.my.recordings {
+  #page-header {
+    padding: 30px 0 20px 0;
+
+    .user-links .icon-awesome {
+      color: #eee;
+    }
+  }
+
+  #user-info .user-links a {
+    @include link-colors(#fff, #ddd, #ddd, #fff);
+  }
+
+  #user-info .user-avatar {
+    background: $mtc-default-bg;
+    border: 1px solid #55626e;
+  }
+}
+
+/* Overriding bootstrap buttons */
+.btn, a.btn, .btn.btn-info, .btn.btn-primary {
+  border: 1px solid #4C4C4C;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+  transition: none;
+
+  @include background(linear-gradient(top, $mtc-bg-light, $mtc-bg-dark));
+
+  a { @include link-colors(#fff, #eee, #eee, #fff); }
+
+  .icon-awesome { color: #fff; }
+  .caret { border-top-color: #fff; }
+
+  &:hover, &:active, &:focus, &.active {
+    background: darken($mtc-bg-light, 15);
+    transition: none;
+    color: #fff;
+  }
+}
+.btn-group.open .btn.dropdown-toggle {
+  border: 1px solid #4C4C4C;
+  background: darken($mtc-bg-light, 15);
+  transition: none;
+}
+.btn.btn-danger {
+  border: 1px solid $mtc-bg-orange-dark;
+  @include background(linear-gradient(top, $mtc-bg-orange-light, $mtc-bg-orange-dark));
+
+  &:hover, &:active, &:focus {
+    background: darken($mtc-bg-orange-light, 10);
+    transition: none;
+  }
+}
