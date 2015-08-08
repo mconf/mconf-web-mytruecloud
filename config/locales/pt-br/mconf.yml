@@ -56,7 +56,7 @@ pt-br:
     datetimepicker:
       format_display: "%d/%m/%Y"
       format: "dd-MM-yyyy"
-      format_rails: "%d/%m/%Y %H:%M %z"
+      format_rails: "%d/%m/%Y %H:%M"
     decline: "Negar"
     deny: "Negar"
     destroy: "Remover"
@@ -462,6 +462,7 @@ pt-br:
     edit:
       editing_room: "Editando a sala '%{room}'"
     form:
+      layout_empty_option: "<padrão>"
       metadata:
         add: "Adicionar metadados"
         set_to_remove: "Marcar para remover"
@@ -472,7 +473,9 @@ pt-br:
       at: "às"
       duration: "Duração"
       meeting_in: "Enviando convite para conferência em:"
-      timezone: "Você está usando o fuso horário %{timezone}"
+      offset: "Sua diferença de horário atual é \"%{offset}\""
+      offset_daylight_savings: "Sua diferença de horário atual é \"%{offset}\" (o horário de verão está em efeito)"
+      timezone: "As datas abaixo estão no fuso horário \"%{timezone}\""
       title: "Convite para conferência"
       users:
         hint: "Digite para começar a buscar"
